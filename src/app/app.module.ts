@@ -23,8 +23,8 @@ import { SongService } from './services/song.service';
     FormsModule
   ],
   providers: [
-    AnimalService, 
-    MessageService, 
+    AnimalService,
+    MessageService,
     SongService],
   bootstrap: [AppComponent]
 })

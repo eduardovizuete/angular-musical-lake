@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AnimalsComponent } from './animals.component';
+import { AnimalDetailComponent } from '../animal-detail/animal-detail.component';
+import { AnimalService } from '../services/animal.service';
+import { MessageService } from '../services/message.service';
+import { SongService } from '../services/song.service';
 
 describe('AnimalsComponent', () => {
   let component: AnimalsComponent;
@@ -8,7 +12,8 @@ describe('AnimalsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AnimalsComponent ]
+      declarations: [ AnimalsComponent, AnimalDetailComponent ],
+      providers: [ AnimalService,  MessageService, SongService ]
     })
     .compileComponents();
   }));
