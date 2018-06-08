@@ -1,0 +1,17 @@
+<div *ngIf="animal">
+
+  <h2>{{ animal.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{animal.id}}</div>
+  <div><span>name: </span>{{animal.name}}</div>
+  <label>Sounds: </label>
+  <select (change)="onSelectSound($event.target.value)">
+  	<option style="display:none">select a sound</option>
+    <option *ngFor="let sound of animal.sounds" value={{sound.name}}>
+      {{sound.name}}
+    </option>
+  </select>
+  <p></p>
+  <div>
+    <button (click)="searchNextSoundsInSongs()">Search next sounds</button>
+  </div>
+</div>
