@@ -36,9 +36,13 @@ export class AnimalDetailComponent implements OnInit {
     songs.forEach(song => {
       this.messageService.add('Sound found in song: ' + song.name);
       this.messageService.add('Next sounds in song: ');
-      song.notes.forEach(note => {
-        this.messageService.add(' ==> ' + note.sound.name);
-      });
+      if (song.notes.length > 0) {
+        song.notes.forEach(note => {
+          this.messageService.add(' ==> ' + note.sound.name);
+        });
+      } else {
+        this.messageService.add(' ==> no more sounds');
+      }
     });
   }
 

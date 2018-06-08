@@ -12,7 +12,6 @@ export class AnimalService {
   constructor(private messageService: MessageService) { }
 
   getAnimals(): Observable<Animal[]> {
-    this.messageService.add('AnimalService: fetched animals');
     return of(ANIMALS);
   }
 
